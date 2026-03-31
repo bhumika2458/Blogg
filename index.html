@@ -1,196 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bhumika B - Cybersecurity Blog</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bhumika B | Cybersecurity Portfolio</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+<style>
+html {
+    scroll-behavior: smooth;
+}
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #a8edea, #fed6e3);
-            color: #333;
-            transition: 0.4s;
-        }
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(120deg, #89f7fe, #66a6ff);
+    transition: 0.4s;
+}
 
-        /* Dark Mode */
-        .dark {
-            background: #121212;
-            color: #eee;
-        }
+.dark-mode {
+    background: #0f172a;
+    color: white;
+}
 
-        .dark .card {
-            background: #1e1e1e;
-        }
+.container {
+    max-width: 950px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
 
-        .dark .navbar {
-            background: #000;
-        }
+.dark-mode .container {
+    background: #1e293b;
+}
 
-        /* Navbar */
-        .navbar {
-            background: #2c3e50;
-            padding: 15px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-        }
+.profile {
+    text-align: center;
+}
 
-        .navbar a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
+.profile img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 4px solid #66a6ff;
+    transition: 0.3s;
+}
 
-        .toggle-btn {
-            float: right;
-            margin-right: 20px;
-            cursor: pointer;
-            color: white;
-        }
+.profile img:hover {
+    transform: scale(1.05);
+}
 
-        /* Container */
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-        }
+h1 {
+    margin: 10px 0;
+}
 
-        .card {
-            background: white;
-            padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 12px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-            transition: 0.3s;
-        }
+.typing {
+    color: #ff4b5c;
+    font-weight: bold;
+    font-size: 18px;
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+h2 {
+    color: #4a00e0;
+    margin-top: 30px;
+    border-left: 5px solid #66a6ff;
+    padding-left: 10px;
+}
 
-        h1 {
-            text-align: center;
-        }
+.dark-mode h2 {
+    color: #38bdf8;
+}
 
-        h2 {
-            color: #6a11cb;
-        }
+p {
+    line-height: 1.8;
+}
 
-        /* Projects */
-        .projects {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
 
-        .project {
-            background: #f5f5f5;
-            padding: 15px;
-            border-radius: 10px;
-        }
+.skill {
+    background: #66a6ff;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
 
-        .dark .project {
-            background: #2a2a2a;
-        }
+.skill:hover {
+    background: #4a00e0;
+    transform: scale(1.05);
+}
 
-        .highlight {
-            color: #ff6f61;
-        }
+.projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
 
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 20px;
-        }
+.project-card {
+    background: #f1f5f9;
+    padding: 15px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
 
-    </style>
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.dark-mode .project-card {
+    background: #334155;
+}
+
+.toggle-btn {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 20px;
+    background: black;
+    color: white;
+    cursor: pointer;
+}
+
+.footer {
+    margin-top: 40px;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+}
+
+a {
+    color: #4a00e0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dark-mode a {
+    color: #38bdf8;
+}
+
+</style>
 </head>
+
 <body>
 
-<div class="navbar">
-    <span class="toggle-btn" onclick="toggleMode()">🌙</span>
-    <a href="#">Home</a>
-    <a href="#">Projects</a>
-    <a href="#">Contact</a>
-</div>
+<button class="toggle-btn" onclick="toggleMode()">🌙</button>
 
 <div class="container">
 
-    <h1>My Journey into Cybersecurity</h1>
-
-    <div class="card">
-        <h2>Introduction</h2>
-        <p>Hello! I’m <span class="highlight">Bhumika B</span>, passionate about cybersecurity and technology.</p>
+    <div class="profile">
+        <h1>Bhumika B</h1>
+        <p class="typing" id="typing"></p>
     </div>
 
-    <div class="card">
-        <h2>About Me</h2>
-<p>
-    Hello! I’m Bhumika B, currently pursuing a Bachelor of Engineering (B.E.) in Cybersecurity at SRM Valliammai Engineering College. 
-    I am a passionate and curious learner who is always eager to explore the world of technology and digital security.
-</p>
-<p>
-    I am highly interested in understanding how systems work and how to protect them from cyber threats. 
-    I believe in continuous learning, improving my skills, and staying updated with modern technologies.
-</p>
-    </div>
-       <h2>Skills</h2>
-    <div class="card">
-       <h2>Skills</h2>
-     <div class="skills">
+    <h2>Introduction</h2>
+    <p>
+        Hello! I’m Bhumika B, a passionate cybersecurity student who is always eager to explore the digital world. 
+        I believe in continuous learning, improving my skills, and staying updated with modern technology.
+    </p>
+    <h2>About Me</h2>
+    <p>
+        Hello! I’m Bhumika B, currently pursuing a Bachelor of Engineering (B.E.) in Cybersecurity at SRM Valliammai Engineering College. 
+        I am a passionate and curious learner who is always eager to explore the world of technology and digital security.
+    </p>
+    <p>
+        I am highly interested in understanding how systems work and how to protect them from cyber threats. 
+        I believe in continuous learning, improving my skills, and staying updated with modern technologies.
+    </p>
+    <h2>My Passion</h2>
+    <p>
+        Cybersecurity is not just my subject—it is my passion. I am deeply interested in ethical hacking, network security, 
+        and data protection. I want to develop strong technical skills and contribute to building a secure digital world.
+    </p>
+
+    <h2>Skills</h2>
+    <div class="skills">
         <div class="skill">python</div>
         <div class="skill">Html</div>
         <div class="skill">Photography</div>
-         <div class="skill">Video Editing</div>
-     </div>
-     </div>
-    <div class="card">
-        <h2>My Projects</h2>
-            <div class="projects">
-                <h3>QR Secure ID System</h3>
-                <p>A system for secure identity verification using QR codes.</p>
-            </div>
+        <div class="skill">Video Editing</div>
+    </div>
 
-            <div class="project">
-                <h3>Basic Network Scanner</h3>
-                <p>Scans devices connected to a network for security analysis.</p>
-            </div>
+    <h2>Projects</h2>
+    <div class="projects">
+        <div class="project-card">
+            <h3>QR Based Secure ID System</h3>
+            <p>A system to enhance identity verification using QR technology.</p>
+        </div>
 
-            <div class="project">
-                <h3>Password Strength Checker</h3>
-                <p>Checks how strong and secure a password is.</p>
-            </div>
-
-            <div class="project">
-                <h3>Phishing Awareness Page</h3>
-                <p>Educates users about phishing attacks and prevention.</p>
-            </div>
-
+        <div class="project-card">
+            <h3>Basic Cyber Threat Analyzer</h3>
+            <p>Analyzing common cyber threats and providing basic protection methods.</p>
         </div>
     </div>
 
-    <div class="card">
-        <h2>My Goal</h2>
-        <p>To become a cybersecurity expert and protect digital systems.</p>
-    </div>
+    <h2>My Goals</h2>
+    <p>
+        I aim to become a skilled cybersecurity professional and contribute to protecting digital systems. 
+        I am committed to continuous growth and learning.
+    </p>
 
     <div class="footer">
-        <h3>Contact Me</h3>
-        <p>Email: bhumikabala2458@gmail.com</p>
-        <p>LinkedIn: your-profile-link</p>
+        <p>Email: <a href="mailto:bhumikabala2458@gmail.com">bhumikabala2458@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/bhumika-bala" target="_blank">
+            linkedin.com/in/bhumika-bala
+        </a></p>
     </div>
 
 </div>
 
 <script>
-    function toggleMode() {
-        document.body.classList.toggle("dark");
+function toggleMode() {
+    document.body.classList.toggle("dark-mode");
+}
+
+const text = "Cybersecurity Student | Future Security Expert";
+let i = 0;
+
+function typingEffect() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typingEffect, 40);
     }
+}
+
+typingEffect();
 </script>
 
 </body>
 </html>
+        
+ 
